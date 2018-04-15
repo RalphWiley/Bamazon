@@ -31,7 +31,8 @@ CREATE TABLE departments(
     DepartmentName VARCHAR(50) NOT NULL,
     OverHeadCosts DECIMAL(10,2) NOT NULL,
     TotalSales DECIMAL(10,2) NOT NULL,
-    PRIMARY KEY(DepartmentID));
+    PRIMARY KEY(DepartmentID)
+);
 
 INSERT INTO Departments(DepartmentName, OverHeadCosts, TotalSales)
 VALUES ('Entertainment', 50000.00, 15000.00),

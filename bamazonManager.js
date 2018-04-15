@@ -62,7 +62,8 @@ function addToInventory() {
             itemArray.push(res[i].product_name);
         }
 
-        inquirer.prompt([{
+        inquirer.prompt([
+            {
             type: 'list',
             name: 'product',
             choices: itemArray,
@@ -100,11 +101,11 @@ function addNewProduct() {
     connection.query('SELECT * FROM departments', function(err, res) {
         if(err) throw err;
         for (var i = 0; i < res.length; i++) {
-            departmentNames.push(res[i].department_name);
+            departmentNames.push(res[i].DepartmentName);
         }
     });
 
-    inquirer.prompt({{
+    inquirer.prompt({
         type: 'input',
         name: 'product',
         message: 'Product: ',
@@ -133,7 +134,7 @@ function addNewProduct() {
             if(isNaN(value) === false){return true;}
             else{return false;}
         }
-     }}).then(function(ans) {
+     }).then(function(ans) {
          connection.query('INSERT INTO products SET ?', {
              product_name: ans.product,
              department_name: ans.department,

@@ -33,6 +33,8 @@
   
   <img width="705" alt="screen shot 2018-04-14 at 11 21 40 pm" src="https://user-images.githubusercontent.com/33463643/38775010-d690880a-403b-11e8-87a3-864e8abd8ca3.png">
   
+  <img width="804" alt="screen shot 2018-04-14 at 11 28 36 pm" src="https://user-images.githubusercontent.com/33463643/38775015-070dcd94-403c-11e8-9e50-07af897c8c6d.png">
+  
   
   ## Technologies used
   

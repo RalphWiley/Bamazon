@@ -36,7 +36,7 @@ var connection = mysql.createConnection({
             name: 'id',
             message: 'What is the ID of the product you would like to purchase?',
             validate: function(value) {
-               if(isNan(value) == false && parseInt(value) <= result.length && parseInt(value) > 0) {
+               if(isNaN(value) == false && parseInt(value) <= result.length && parseInt(value) > 0) {
                    return true;
                } else {
                    return false;
@@ -48,7 +48,7 @@ var connection = mysql.createConnection({
             name: 'quantity',
             message: 'How many would you like to purchase?',
             validate: function(value) {
-                if(isNan(value)) {
+                if(isNaN(value)) {
                     return false;
                 } else {
                     return true;
@@ -80,8 +80,8 @@ var connection = mysql.createConnection({
 
                     //updates totalSales in departments table
                     connection.query('UPDATE departments SET ? WHERE ?' [
-                        {total_sales: deptRes[index].total_sales + grandTotal},
-                        {department_name: result[itemBought].department_name}
+                        {TotalSales: deptRes[index].TotalSales + grandTotal},
+                        {DepartmentName: res[itemBought].DepartmentName}
                     ], function(err, deptRes) {
                         if(err) throw err;
                     });
@@ -96,12 +96,13 @@ var connection = mysql.createConnection({
 
 //prompts if user would like to purchase another item
 function reprompt() {
-    inquirer.prompt([{
+    inquirer.prompt([
+    {
         type: 'confirm',
         name: 'reply',
         message: 'Would you like to purchase another item?'
-    }]).then(function(answer) {
-        if(answer.reply){
+    }]).then(function(ans) {
+        if(ans.reply){
             start();
         } else {
             console.log('Thanks for browsing!');

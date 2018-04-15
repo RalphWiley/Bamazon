@@ -25,3 +25,20 @@ INSERT INTO products (item_id, product_name, department_name, price, stock_quant
 
 SELECT * FROM products;
 ALTER TABLE products CHANGE COLUMN `product-name` `product_name` VARCHAR(50) NOT NULL;
+
+CREATE TABLE departments(
+    DepartmentID MEDIUMINT AUTO_INCREMENT NOT NULL,
+    DepartmentName VARCHAR(50) NOT NULL,
+    OverHeadCosts DECIMAL(10,2) NOT NULL,
+    TotalSales DECIMAL(10,2) NOT NULL,
+    PRIMARY KEY(DepartmentID));
+
+INSERT INTO Departments(DepartmentName, OverHeadCosts, TotalSales)
+VALUES ('Entertainment', 50000.00, 15000.00),
+    ('Computer and Electronics', 20000.00, 12000.00),
+    ('Home Appliances', 30000.00, 15000.00),
+    ('Books and Graphic Novels', 3000.00, 12000.00),
+    ('Grocery', 1200.00, 15000.00),
+    ('Kids', 40000.00, 12000.00),
+    ('Clothing', 35000.00, 15000.00),
+    ('Sports and Outdoors', 12000.00, 12000.00);

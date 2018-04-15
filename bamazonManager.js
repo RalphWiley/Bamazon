@@ -10,7 +10,8 @@ var connection = mysql.createConnection({
   });
 
   function start() {
-      inquirer prompt([{
+      inquirer.prompt([
+        {
           type: 'list',
           name: 'doThing',
           message: 'What would you like to do?',
@@ -96,7 +97,7 @@ function addToInventory() {
 function addNewProduct() {
     var departmentNames = [];
 
-    connection.query('SELECT * FROM Departments', function(err, res) {
+    connection.query('SELECT * FROM departments', function(err, res) {
         if(err) throw err;
         for (var i = 0; i < res.length; i++) {
             departmentNames.push(res[i].department_name);
